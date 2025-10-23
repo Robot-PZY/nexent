@@ -433,9 +433,10 @@ class ElasticSearchCore:
                         
                         for doc, embedding in zip(embedding_sub_batch, embeddings):
                             doc_embedding_pairs.append((doc, embedding))
+                            
                     except Exception as e:
                         logger.error(f"Embedding API error: {e}, ES batch num: {es_batch_num}, sub-batch start: {j}, size: {len(embedding_sub_batch)}")
-                        raise
+                        continue
                 
                 # Perform a single bulk insert for the entire Elasticsearch batch
                 if not doc_embedding_pairs:
