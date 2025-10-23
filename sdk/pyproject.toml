@@ -69,17 +69,17 @@ data_process = [
 ]
 performance = [
     # OpenTelemetry Core Components
-    "opentelemetry-api",
-    "opentelemetry-sdk",
+    "opentelemetry-api>=1.20.0",
+    "opentelemetry-sdk>=1.20.0",
     # OpenTelemetry Instrumentation
-    "opentelemetry-instrumentation",
-    "opentelemetry-instrumentation-fastapi",
-    "opentelemetry-instrumentation-requests",
+    "opentelemetry-instrumentation>=0.41b0",
+    "opentelemetry-instrumentation-fastapi>=0.41b0",
+    "opentelemetry-instrumentation-requests>=0.41b0",
     # OpenTelemetry Exporters
-    "opentelemetry-exporter-jaeger",
-    "opentelemetry-exporter-prometheus",
+    "opentelemetry-exporter-jaeger>=1.20.0",
+    "opentelemetry-exporter-prometheus>=1.20.0",
     # Additional monitoring dependencies
-    "prometheus-client"
+    "prometheus-client>=0.19.0"
 ]
 dev = [
     "nexent[quality, data_process, performance]"
